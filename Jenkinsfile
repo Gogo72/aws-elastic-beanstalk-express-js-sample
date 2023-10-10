@@ -13,6 +13,7 @@ pipeline {
         }
         stage('Test external script') { 
             steps {
+                sh "chmod +x -R ${env.WORKSPACE}" 
                 sh './test.sh' 
             }
         }
